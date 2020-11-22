@@ -1,15 +1,21 @@
 <template>
   <div id="grid">
     <ServerList />
+    <ServerName />
+    <ChannelList />
   </div>
 </template>
 
 <script>
     import ServerList from './components/ServerList/ServerList'
+    import ServerName from './components/ServerName/ServerName'
+    import ChannelList from './components/ChannelList/ChannelList'
 
   export default {
     components: {
-      ServerList
+      ServerList,
+      ServerName,
+      ChannelList
     }
   }
 </script>
