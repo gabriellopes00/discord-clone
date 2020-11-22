@@ -73,6 +73,6 @@
     width: 32px;
     
     margin-bottom: 8px;
-    border-bottom: solid 2px var(--quaternary);
+    border-bottom: solid 2px var(--grey);
   }
 </style>

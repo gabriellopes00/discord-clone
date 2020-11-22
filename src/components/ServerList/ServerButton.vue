@@ -43,7 +43,8 @@
 
     &.active,
     &:hover {
-      border-radius: 16px;background-color: var(--discord)
+      border-radius: 16px;
+      background-color: var(--discord)
     }
 
     img{
@@ -97,7 +98,6 @@
     &.active,
     &:hover{
       border-radius: 16px;
-      background-color: var(--rocketseat);
     }
   }
 </style>
