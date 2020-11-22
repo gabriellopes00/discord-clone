@@ -23,7 +23,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .server-button{
     display: flex;
     flex-shrink: 0;

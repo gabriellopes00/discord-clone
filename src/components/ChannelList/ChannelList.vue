@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="list-container">
     <div class="category">
       <div>Channel List</div>
       <div class="category-icon">
@@ -23,8 +23,8 @@
   }
 </script>
 
-<style scoped lang="scss">
-  .container {
+<style lang="scss" scoped>
+  .list-container {
     grid-area: cl;
 
     display: flex;

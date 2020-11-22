@@ -39,6 +39,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 5px;
+    padding: 5px;
 
     background-color: transparent;
     transition: all ease-out 0.2s;

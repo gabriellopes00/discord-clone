@@ -35,7 +35,7 @@
     color: var(--white);
     font-weight: bold;
     font-size: 16px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
 
   .icon{
