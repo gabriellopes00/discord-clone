@@ -1,7 +1,16 @@
 <template>
   <div class="container">
     <div class="messages">
-      <ChannelMessage 
+
+      <ChannelMessage
+        authorName="User 1"
+        :date="getDate"
+        v-for="message  in messagesArray" 
+        :key="message.id" 
+      >
+        {{message}}
+      </ChannelMessage>
+      <!--<ChannelMessage 
         isBot v-for="message  in 7" 
         :key="message.id" 
         authorName="Bot" 
@@ -18,11 +27,18 @@
         date="22/11/2020"
       >
         <Mention>Bot</Mention> hii, how are you ??
-      </ChannelMessage>
+      </ChannelMessage>-->
 
     </div>
     <div class="input-wrapper">
-      <input type="text" name="" placeholder="Write a message..." id="">
+      <input 
+        type="text" 
+        name="message" 
+        v-model="message" 
+        @keypress.enter="writeMessage(message)" 
+        placeholder="Write a message..." 
+        id="input-message"
+      >
       <div class="icon">
         <At :size="24" />
       </div>
@@ -36,10 +52,30 @@
   import Mention from './Mention'
 
   export default {
+    props: {      
+      messagesArray: Array
+    },
     components: {
       At,
       ChannelMessage,
       Mention
+    },
+    data(){
+      return{
+        message: '',
+        date: ''
+      }
+    },
+    methods: {
+      writeMessage(message){
+        this.messagesArray.push(message)
+        this.message = ''
+      } 
+    },
+    computed:{
+      getDate(){
+        return new Date().toString()
+      }
     }
   }
 

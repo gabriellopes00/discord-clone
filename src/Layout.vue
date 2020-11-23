@@ -4,9 +4,9 @@
     <ServerName serverName="Gabriel's Server"/>
     <ChannelList />
     <UserInfo userName="Gabriel Lopes"/>
-    <ChannelInfo channelName="Gabriel's Channel" />
-    <ChannelData />
-    <UserList :onlineUsers="1" :offlineUsers="9"/>
+    <ChannelInfo channelName="Gabriel's Channel" :searchUser="searchUser"/>
+    <ChannelData :messagesArray="messages"/>
+    <UserList :Userlist="Userlist" :search_user="searchUser"/>
   </div>
 </template>
 
@@ -28,6 +28,22 @@
       ChannelInfo,
       ChannelData,
       UserList
+    },
+    data(){
+      return{
+        messages: ['...'],
+        searchUser: '',
+        Userlist: {
+          onlineUsers: ['Gabriel Lopes', 'Silvia Lopes'],
+          offlineUsers: [
+            'Bot 1',
+            'Bot 25',
+            'Bot 3',
+            'Ana Clara',
+            'André Vitor'
+          ],
+        }
+      }
     }
   }
 </script>

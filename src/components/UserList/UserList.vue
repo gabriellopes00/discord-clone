@@ -1,9 +1,18 @@
 <template>
   <div class="user-list">
-    <div class="title-users">On-line {{onlineUsers}}</div>
-    <UserRow nickName="Gabriel Lopes"/>
-    <div class="title-users">Off-line {{offlineUsers}}</div>
-    <UserRow isBot v-for="user in 9" :key="user.id" nickName="bot"/>
+    <div class="title-users">On-line {{getOnlineUsers}}</div>
+    <UserRow 
+      v-for="user in userlist_filterd.onlineUsers" 
+      :key="user.name" 
+      :nickName="user"
+    />
+    <div class="title-users">Off-line {{getOfflineUsers}}</div>
+    <UserRow 
+      isBot 
+      v-for="user in userlist_filterd.offlineUsers" 
+      :key="user.name" 
+      :nickName="user"
+    />
   </div>
 </template>
 
@@ -12,11 +21,39 @@
   
   export default {
     props: {
-      onlineUsers: Number,
-      offlineUsers: Number
+      Userlist: Object,
+      search_user: String
     },
     components: {
       UserRow
+    },
+    methods: {
+      cl(){ console.log(this.search_user);}
+    },
+    computed: {
+      getOnlineUsers() { return this.Userlist.onlineUsers.length },
+      getOfflineUsers() { return this.Userlist.offlineUsers.length },
+
+      userlist_filterd(){ 
+        if(this.search_user === '' || this.search_user === ' '){ 
+          return this.Userlist
+        } else{ 
+          const filtered_list = this.Userlist
+
+          console.log(filtered_list);
+          console.log(this.Userlist);
+
+          filtered_list.onlineUsers = filtered_list.onlineUsers.filter( user =>
+            user.indexOf(this.search_user) != -1
+          )
+          filtered_list.offlineUsers = filtered_list.offlineUsers.filter( user =>
+            user.indexOf(this.search_user) != -1
+          )
+
+          console.log(this.search_user);
+          return filtered_list
+        }
+      }
     }
   }
 </script>
