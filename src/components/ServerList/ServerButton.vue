@@ -1,14 +1,15 @@
 <template>
   <div class="server-button" :class="{
     'serverButton-hasNotifications' : hasNotifications,
-    'serverButton-isHome' : isHome
+    'serverButton-isHome' : isHome,
+    'active' : selected
     }">
     <img 
       v-if="isHome" 
       src="../../assets/images/discord-logo.svg" 
       alt="dicord-logo"
     >
-    <div v-if="mentions" class="mentions">{{mentions}}</div>
+    <div v-if="mentions" class="mentions">{{ mentions }}</div>
   </div>
 </template>
 
@@ -18,7 +19,7 @@
       selected: Boolean,
       isHome: Boolean,
       hasNotifications: Boolean,
-      mentions: Number
+      mentions: Number,
     }
   }
 </script>
@@ -32,7 +33,6 @@
 
     width: 48px;
     height: 48px;
-
     margin-bottom: 8px;
     border-radius: 50%;
 
@@ -50,7 +50,6 @@
     img{
       width: 24px;
       height: 24px;
-
       color: #fff
     }
 
@@ -59,7 +58,6 @@
       
       width: auto;
       height: 24px;
-
       padding: 0 4px;
       bottom: -4px;
       right: -4px;
@@ -85,10 +83,30 @@
 
       background-color: var(--white);
       position: absolute;
-
       left: -17px;
       top: calc(50% - 4.5px);
       border-radius: 50%;
+
+      transition: .2s;
+    }
+
+    &:hover, &.active{
+      &::before{
+        content: '';      
+        width: 9px;
+        height: 30px;
+        top: calc(20% - 4.5px);
+        border-radius: 15%;
+      }
+    }
+  }
+  .serverButton-hasNotifications:hover{
+    &::before{
+      content: '';      
+      width: 9px;
+      height: 40px;
+      top: calc(20% - 4.5px);
+      border-radius: 15%;
     }
   }
 

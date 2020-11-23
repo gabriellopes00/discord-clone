@@ -1,12 +1,25 @@
 <template>
   <div class="container">
     <div class="messages">
-      <ChannelMessage v-for="message  in 8" :key="message.id" authorName="Gabriel Lopes" date="22/11/2020">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, quaerat animi recusandae modi veniam accusantium quidem non officia voluptas quia minus laudantium ad eius, vel tempore quos earum porro. Aut!
+      <ChannelMessage 
+        isBot v-for="message  in 7" 
+        :key="message.id" 
+        authorName="Bot" 
+        date="22/11/2020"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit...
       </ChannelMessage>
-      <ChannelMessage ref="new" v-for="message  in 8" :key="message.id" authorName="Gabriel Lopes" date="22/11/2020">
-        <Mention>Ana clara dini</Mention> hii, how are you
+      
+      <ChannelMessage 
+        hasMention ref="new" 
+        v-for="message  in 3" 
+        :key="message.id" 
+        authorName="Gabriel Lopes" 
+        date="22/11/2020"
+      >
+        <Mention>Bot</Mention> hii, how are you ??
       </ChannelMessage>
+
     </div>
     <div class="input-wrapper">
       <input type="text" name="" placeholder="Write a message..." id="">
@@ -18,7 +31,6 @@
 </template>
 
 <script>
-  import Vue from 'vue'
   import At from 'vue-material-design-icons/At'
   import ChannelMessage from './ChannelMessage'
   import Mention from './Mention'
@@ -36,7 +48,6 @@
 <style lang="scss" scoped>
   .container {
     grid-area: cd;
-
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -62,6 +73,7 @@
         font-size: 16px;
       }
     }
+    
     .icon{
       color: var(--grey);
       position: relative;
@@ -75,9 +87,9 @@
   .messages {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;   
     height: calc(100vh - 46px - 68px);
     max-height: calc(100vh - 46px - 68px);
-    overflow-y: scroll;
 
     .channelmessage:first-child {
       margin-top: 0;

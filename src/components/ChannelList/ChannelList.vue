@@ -15,6 +15,7 @@
 <script>
   import AddCategoryIcon from 'vue-material-design-icons/Plus'
   import ChannelButton from './ChannelButton'
+
   export default {
     components: {
       AddCategoryIcon,
@@ -26,7 +27,6 @@
 <style lang="scss" scoped>
   .list-container {
     grid-area: cl;
-
     display: flex;
     flex-direction: column;
 

@@ -3,7 +3,7 @@
     <div class="profile">
       <div class="avatar"></div>
       <div class="user-data">
-        <strong>Gabriel Lopes</strong>
+        <strong>{{ userName }}</strong>
         <span>#011</span>
       </div>
     </div>
@@ -21,6 +21,9 @@
   import Settings from 'vue-material-design-icons/CogOutline'
 
   export default {
+    props: {
+      userName: String
+    },
     components:{
       Mic, 
       HeadPhones, 

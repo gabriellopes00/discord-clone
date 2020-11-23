@@ -1,15 +1,20 @@
 <template>
   <div class="user-list">
-    <div class="title-users">On-line 190</div>
-    <UserRow nickName="Gabriel LOPES"/>
-    <div class="title-users">Off-line 90</div>
-    <UserRow isBot v-for="user in 90" :key="user.id" nickName="Gabriel LOPES"/>
+    <div class="title-users">On-line {{onlineUsers}}</div>
+    <UserRow nickName="Gabriel Lopes"/>
+    <div class="title-users">Off-line {{offlineUsers}}</div>
+    <UserRow isBot v-for="user in 9" :key="user.id" nickName="bot"/>
   </div>
 </template>
 
 <script>
   import UserRow from './UserRow'
+  
   export default {
+    props: {
+      onlineUsers: Number,
+      offlineUsers: Number
+    },
     components: {
       UserRow
     }

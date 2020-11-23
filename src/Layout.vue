@@ -1,12 +1,12 @@
 <template>
   <div id="grid">
     <ServerList />
-    <ServerName />
+    <ServerName serverName="Gabriel's Server"/>
     <ChannelList />
-    <UserInfo />
-    <ChannelInfo />
+    <UserInfo userName="Gabriel Lopes"/>
+    <ChannelInfo channelName="Gabriel's Channel" />
     <ChannelData />
-    <UserList />
+    <UserList :onlineUsers="1" :offlineUsers="9"/>
   </div>
 </template>
 

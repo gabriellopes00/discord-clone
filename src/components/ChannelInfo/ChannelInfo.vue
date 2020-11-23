@@ -1,17 +1,21 @@
 <template>
   <div class="container">
     <div class="icon">
-      <HashTagIcon />
+      <HashTagIcon :size="22"/>
     </div>
-    <h1 class="title">First Chat</h1>
-    <div class="separator"></div>
+    <h1 class="title">{{ channelName }}</h1>
+    <div class="separator" />
     <div class="description">Lorem ipsum dolor sit amet...</div>
   </div>
 </template>
 
 <script>
   import HashTagIcon from 'vue-material-design-icons/Pound'
+
   export default {
+    props: {
+      channelName: String
+    },
     components: {
       HashTagIcon
     }
@@ -21,20 +25,18 @@
 <style lang="scss" scoped>
   .container {
     grid-area: ci;
-
     display: flex;
     align-items: center;
-
     background-color: var(--primary);
     padding: 0 17px;
     z-index: 2;
-    box-shadow: rgba(0, 0, 0, 0.9) 0 1px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 1px 0 0;
   }
 
   .title{
     color: var(--white);
     font-size: 16px;
-    
+    letter-spacing: 2px;
     margin-left: 9px;
     font-weight: bold;
   }

@@ -1,13 +1,11 @@
 <template>
-  <div class="channel-message" :class="{
-    hasMention : hasMention
-  }">
+  <div class="channel-message" :class="{ hasMention : hasMention }">
     <div class="avatar" :class="{ botAvatar : isBot }" />
     <div class="message">
       <div class="user">
-        <strong>{{authorName}}</strong>
+        <strong>{{ authorName }}</strong>
         <span class="bot" v-if="isBot">bot</span>
-        <span class="date">{{date}}</span>
+        <span class="date">{{ date }}</span>
       </div>
       <div class="body">
         <slot />
@@ -29,6 +27,7 @@
 
 <style lang="scss" scoped>
   .channel-message{
+    box-sizing: content-box;
     display: flex;
     align-items: center;
     padding: 8px 16px;
@@ -39,6 +38,9 @@
     &.hasMention{
       background-color: var(--mention-message);
       border-left: solid 2px var(--mention-detail);
+    }
+    &:hover{
+      background-color: var(--secondary)
     }
   }
 
@@ -58,7 +60,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     height: 40px;
     margin-left: 17px;
 
@@ -77,14 +78,6 @@
       text-align: left;
       font-size: 16px;
       margin-top: 5px;
-
-      &.mentoin{
-        color: var(--link);
-        cursor: pointer;
-        &:hover{
-          outline: underline;
-        }
-      }
     }
     .bot{
       margin-left: 9px;

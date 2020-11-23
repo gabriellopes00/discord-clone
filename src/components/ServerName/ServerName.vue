@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="title">Gabriel Server</div>
+    <div class="title">{{ serverName }}</div>
     <div class="icon">
       <ExpandIcon :size="28" />
     </div>
@@ -10,6 +10,9 @@
 <script>
   import ExpandIcon from 'vue-material-design-icons/ChevronDown'
   export default {
+    props: {
+      serverName: String
+    },
     components: {
       ExpandIcon
     }
@@ -19,15 +22,13 @@
 <style scoped>
   .container{
     grid-area: sn;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background-color: var(--secondary);
+    background-color: var(--quaternary);
 
     padding: 0 11px 0 16px;
-
     box-shadow: rgba(0, 0, 0, .9) 0 1px 0 0;
   }
 
@@ -35,7 +36,9 @@
     color: var(--white);
     font-weight: bold;
     font-size: 16px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .icon{

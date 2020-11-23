@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{active : selected}">
+  <div class="container" :class="{ active : selected }">
     <div class="channel-info">
       <HashTagIcon class="hashIcon" :size="20" />
       <div>{{channelName}}</div>    
