@@ -31,16 +31,40 @@
     },
     data(){
       return{
-        messages: ['...'],
+        messages: ['Hello...'],
         searchUser: '',
         Userlist: {
-          onlineUsers: ['Gabriel Lopes', 'Silvia Lopes'],
+          onlineUsers: [
+            {
+              name: 'Gabriel Lopes',
+              isBot: false
+            }, 
+            {
+              name: 'User 1',
+              isBot: false
+            }
+          ],
           offlineUsers: [
-            'Bot 1',
-            'Bot 25',
-            'Bot 3',
-            'Ana Clara',
-            'André Vitor'
+            {
+              name: 'Bot 1',
+              isBot: true
+            },
+            {
+              name: 'Bot 25',
+              isBot: true
+            },
+            {
+              name: 'User 21',
+              isBot: false
+            },
+            {
+              name: 'User 76',
+              isBot: false
+            },
+            {
+              name: 'Bot 3',
+              isBot: true
+            },
           ],
         }
       }

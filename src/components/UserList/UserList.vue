@@ -4,14 +4,15 @@
     <UserRow 
       v-for="user in userlist_filterd.onlineUsers" 
       :key="user.name" 
-      :nickName="user"
+      :nickName="user.name"   
+      :isBot="user.isBot" 
     />
     <div class="title-users">Off-line {{getOfflineUsers}}</div>
     <UserRow 
-      isBot 
       v-for="user in userlist_filterd.offlineUsers" 
       :key="user.name" 
-      :nickName="user"
+      :nickName="user.name"      
+      :isBot="user.isBot" 
     />
   </div>
 </template>

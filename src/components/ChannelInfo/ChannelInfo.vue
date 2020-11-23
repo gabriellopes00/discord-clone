@@ -1,33 +1,17 @@
 <template>
   <div class="container">
-    <div class="about">
-      <div class="icon">
-        <HashTagIcon class="iconElement" :size="24"/>
-      </div>
-      <h1 class="title">{{ channelName }}</h1>
-      <div class="separator" />
-      <div class="description">Lorem ipsum dolor sit amet...</div>
-      <div class="icon action">
-        <BellIcon class="iconElement" :size="24"/>   
-        <PinIcon class="iconElement" :size="24"/>
-        <GroupIcon class="iconElement" :size="24"/>
-      </div>
+    <div class="icon">
+      <HashTagIcon class="iconElement" :size="24"/>
     </div>
-    <div class="search icon">   
-      <input type="text" v-model="searchUser" name="userFind">
-      <CardIcon class="iconElement" :size="24" />
-      <QuestionIcon class="iconElement" :size="24"/>
-    </div>
+    <h1 class="title">{{ channelName }}</h1>
+    <div class="separator" />
+    <div class="description">Lorem ipsum dolor sit amet...</div>
+    <input type="text" v-model="searchUser" name="searchUser">
   </div>
 </template>
 
 <script>
   import HashTagIcon from 'vue-material-design-icons/Pound'
-  import BellIcon from 'vue-material-design-icons/Bell'
-  import PinIcon from 'vue-material-design-icons/Pin'
-  import GroupIcon from 'vue-material-design-icons/AccountGroup'
-  import QuestionIcon from 'vue-material-design-icons/CloudQuestion'
-  import CardIcon from 'vue-material-design-icons/ChatAlert'
 
   export default {
     props: {
@@ -36,11 +20,6 @@
     },
     components: {
       HashTagIcon,
-      BellIcon,
-      QuestionIcon,
-      GroupIcon,
-      PinIcon,
-      CardIcon
     }
   }
 </script>
@@ -50,20 +29,28 @@
     grid-area: ci;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--primary);
     padding: 0 17px;
     z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+
+    input {
+      width: 230px;
+      height: 24px;
+      border-radius: 5px;
+      padding: 0 7px;
+      color: var(--white);
+      background-color: var(--chat-input);
+      position: absolute;
+      right: 10px;
+
+      &::placeholder {
+        color: var(--grey);
+      }
+    }
   }
 
-  .about{
-    display: flex;
-  }
-  .action{
-    margin-left: 600px;
-  }
-  .about .title{
+  .title{
     color: var(--white);
     font-size: 16px;
     letter-spacing: 2px;
@@ -71,7 +58,7 @@
     font-weight: bold;
   }
 
-  .about .description{
+  .description{
     color: var(--grey);
     font-size: 15px;
   }

@@ -2,6 +2,26 @@
   <div class="container">
     <div class="messages">
 
+      <ChannelMessage 
+        isBot v-for="message  in 1" 
+        :key="message.id" 
+        authorName="Bot" 
+        date="22/11/2020"
+      >
+        Well come to my discord-clone. See this project in
+        <a class="link" href="https://github.com/gabriellopes00/discord-clone">my github</a>
+      </ChannelMessage>      
+      <ChannelMessage 
+        hasMention ref="new" 
+        v-for="message  in 1" 
+        :key="message.id" 
+        authorName="Gabriel Lopes" 
+        date="22/11/2020"
+      >
+        <Mention>Bot</Mention> Hii, how are you ??
+      </ChannelMessage>
+
+
       <ChannelMessage
         authorName="User 1"
         :date="getDate"
@@ -10,24 +30,6 @@
       >
         {{message}}
       </ChannelMessage>
-      <!--<ChannelMessage 
-        isBot v-for="message  in 7" 
-        :key="message.id" 
-        authorName="Bot" 
-        date="22/11/2020"
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit...
-      </ChannelMessage>
-      
-      <ChannelMessage 
-        hasMention ref="new" 
-        v-for="message  in 3" 
-        :key="message.id" 
-        authorName="Gabriel Lopes" 
-        date="22/11/2020"
-      >
-        <Mention>Bot</Mention> hii, how are you ??
-      </ChannelMessage>-->
 
     </div>
     <div class="input-wrapper">
@@ -36,7 +38,7 @@
         name="message" 
         v-model="message" 
         @keypress.enter="writeMessage(message)" 
-        placeholder="Write a message..." 
+        placeholder="Type a message here, and press enter." 
         id="input-message"
       >
       <div class="icon">
@@ -143,5 +145,10 @@
     &::-webkit-scrollbar-track {
       background-color: var(--secondary);
     }
+  }
+
+  .link{
+    color: var(--grey);
+    outline: none;
   }
 </style>
