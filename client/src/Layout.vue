@@ -7,6 +7,7 @@
     <ChannelInfo channelName="Gabriel's Channel" :searchUser="searchUser"/>
     <ChannelData :messagesArray="messages"/>
     <UserList :Userlist="Userlist" :search_user="searchUser"/>
+    <button @click="sendMessage">try socket.io connection</button>
   </div>
 </template>
 
@@ -18,6 +19,8 @@
     import ChannelInfo from './components/ChannelInfo/ChannelInfo'
     import ChannelData from './components/ChannelData/ChannelData'
     import UserList from './components/UserList/UserList'
+
+    import socketIo from 'socket.io-client'
 
   export default {
     components: {
@@ -66,11 +69,19 @@
               isBot: true
             },
           ],
-        }
+        },
+        socket: {}
       }
     },
-    sockets:{
-      connection(msg){console.log(msg);}
+    created(){
+      this.socket = socketIo('http://localhost:3001/')
+    },
+    methods:{
+      sendMessage(){ 
+        this.socke.on('onload', message => {
+          console.log(message);
+        })
+      }
     }
   }
 </script>
