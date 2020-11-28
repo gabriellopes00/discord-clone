@@ -1,7 +1,11 @@
 {
   "name": "discord-clone",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Discord chat frontend",
+  "main": "src/main.js",
+  "repository": "https://github.com/gabriellopes00/discord-clone",
+  "author": "Gabriel Lopes",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"

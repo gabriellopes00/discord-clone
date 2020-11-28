@@ -2,7 +2,7 @@
   <div class="container" :class="{ active : selected }">
     <div class="channel-info">
       <HashTagIcon class="hashIcon" :size="20" />
-      <div>{{channelName}}</div>    
+      <div>{{ channelName }}</div>    
     </div>
     <div class="channel-actions">
       <InviteIcon class="icon-actions" :size="16" />

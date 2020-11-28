@@ -3,32 +3,33 @@
     <div class="messages">
 
       <ChannelMessage 
-        isBot v-for="message  in 1" 
-        :key="message.id" 
-        authorName="Bot" 
-        date="22/11/2020"
+        v-for="message  in 1" 
+        :key="message" 
+        authorName="Gabriel Lopes" 
+        :date="getDate"
       >
         Well come to my discord-clone. See this project in
         <a class="link" href="https://github.com/gabriellopes00/discord-clone">my github</a>
-      </ChannelMessage>      
-      <ChannelMessage 
-        hasMention ref="new" 
-        v-for="message  in 1" 
-        :key="message.id" 
-        authorName="Gabriel Lopes" 
-        date="22/11/2020"
-      >
-        <Mention>Bot</Mention> Hii, how are you ??
-      </ChannelMessage>
+      </ChannelMessage>   
 
+      <ChannelMessage 
+        isBot
+        hasMention
+        v-for="message  in 1" 
+        :key="message" 
+        authorName="Bot" 
+        :date="getDate"
+      >
+        <Mention>Gabriel Lopes</Mention> Hii, how are you ??
+      </ChannelMessage>
 
       <ChannelMessage
         authorName="User 1"
         :date="getDate"
         v-for="message  in messagesArray" 
-        :key="message.id" 
+        :key="message" 
       >
-        {{message}}
+        {{ message }}
       </ChannelMessage>
 
     </div>
@@ -50,13 +51,12 @@
 
 <script>
   import At from 'vue-material-design-icons/At'
+  import { io } from 'socket.io-client'
+
   import ChannelMessage from './ChannelMessage'
   import Mention from './Mention'
 
   export default {
-    props: {      
-      messagesArray: Array
-    },
     components: {
       At,
       ChannelMessage,
@@ -64,15 +64,28 @@
     },
     data(){
       return{
+        messagesArray: [],
         message: '',
         date: ''
       }
     },
+    created(){
+      this.socket = io('http://localhost:3001/')
+      this.socket.on('getInitialMessages', messages => {
+        this.messagesArray = messages
+      })
+    },
     methods: {
       writeMessage(message){
-        this.messagesArray.push(message)
+        this.socket.emit('sendMessage', message)
         this.message = ''
-      } 
+        this.getReturnedMessage()
+      },
+      getReturnedMessage(){ 
+        this.socket.on('returnMessage', messages => {
+          this.messagesArray = messages
+        })
+      }
     },
     computed:{
       getDate(){

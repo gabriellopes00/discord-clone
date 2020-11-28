@@ -4,12 +4,6 @@
   </span>
 </template>
 
-<script>
-  export default {
-    
-  }
-</script>
-
 <style lang="scss" scoped>
   .mention {
     color: var(--link);

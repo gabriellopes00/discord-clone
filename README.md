@@ -7,12 +7,15 @@
 <p>  
   <img src="https://devicon.dev/devicon.git/icons/vuejs/vuejs-original.svg" alt="vue.js" width="50" height="50"/>  
   <img src="https://devicon.dev/devicon.git/icons/sass/sass-original.svg" alt="sass" width="50" height="50"/>  
-  <img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="nodejs" width="50" height="50"/>
+  <img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="nodejs" width="50" height="50"/>  
+  <img src="./client/.github/io.png" alt="socket.io  " width="50" height="50"/>
+  <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/>  
+  <img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="50" height="50"/>  
 </p>
 
 ## About this project 💻
 ###### *The **server side** is in development yet*
-This is an simple discord interface clone, made with vue.js. This interface don't have any functionality, but i want to tur this project functional, using [Socket.io](https://socket.io/) to create and send messages functionality. I got this idea from the [You tube](https://www.youtube.com/watch?v=E0RwkG3BKvo), so the credits go to the author [Maikel Neris](https://www.youtube.com/channel/UCwwZBOQDEmkWcqs_60NRtMg). However i got this idea from the yt, i did my owns improvements and customization.
+This is an discord interface clone, made with vue.js. But it can connect with the server that is using [Socket.io](https://socket.io/) and [Typescript](https://www.typescriptlang.org/), so the users can send messages to other users (connected in the same host), thus making a real time connection with them. This idea of the ***frontend*** from the [You tube](https://www.youtube.com/watch?v=E0RwkG3BKvo), so the credits go to the author [Maikel Neris](https://www.youtube.com/channel/UCwwZBOQDEmkWcqs_60NRtMg). However i got this idea from the yt, i did my owns improvements and customization, and my server implementation.
 
 ###### Project screen:
 <p align="center">  
@@ -24,17 +27,36 @@ You'll need [Node.js](https://nodejs.org) and i recommend that you have installe
 ```
 git clone https://github.com/gabriellopes00/discord-clone.git
 cd discord-clone
+
+cd server
+yarn install
+
+&&
+
 cd client
 yarn install
 ```
 ```
 git clone https://github.com/gabriellopes00/discord-clone.git
 cd discord-clone
+
+cd server
+npm install
+
+&&
+
 cd client
 npm install
 ```
+## Running Server project
+```
+yarn dev
+```
+```
+npm run dev
+```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development im frontend
 ```
 yarn serve
 ```

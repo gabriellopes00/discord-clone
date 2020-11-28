@@ -19,7 +19,7 @@
       searchUser: String
     },
     components: {
-      HashTagIcon,
+      HashTagIcon
     }
   }
 </script>

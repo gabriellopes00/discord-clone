@@ -7,7 +7,7 @@
   "author": "Gabriel Lopes",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/app.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",

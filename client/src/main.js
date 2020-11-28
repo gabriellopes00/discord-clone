@@ -1,5 +1,5 @@
   import Vue from 'vue'
-
+  
   import './assets/styles/global.scss'
   import Layout from './Layout.vue'
 

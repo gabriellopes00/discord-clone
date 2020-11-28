@@ -1,13 +1,12 @@
 <template>
   <div id="grid">
     <ServerList />
-    <ServerName serverName="Gabriel's Server"/>
+    <ServerName serverName="Gabriel's Server" />
     <ChannelList />
-    <UserInfo userName="Gabriel Lopes"/>
-    <ChannelInfo channelName="Gabriel's Channel" :searchUser="searchUser"/>
-    <ChannelData :messagesArray="messages"/>
-    <UserList :Userlist="Userlist" :search_user="searchUser"/>
-    <button @click="sendMessage">try socket.io connection</button>
+    <UserInfo userName="User 1" />
+    <ChannelInfo channelName="Gabriel's Channel" :searchUser="searchUser" />
+    <ChannelData />
+    <UserList :Userlist="Userlist" />
   </div>
 </template>
 
@@ -19,8 +18,6 @@
     import ChannelInfo from './components/ChannelInfo/ChannelInfo'
     import ChannelData from './components/ChannelData/ChannelData'
     import UserList from './components/UserList/UserList'
-
-    import socketIo from 'socket.io-client'
 
   export default {
     components: {
@@ -34,7 +31,6 @@
     },
     data(){
       return{
-        messages: ['Hello...'],
         searchUser: '',
         Userlist: {
           onlineUsers: [
@@ -43,13 +39,17 @@
               isBot: false
             }, 
             {
+              name: 'Bot 1',
+              isBot: true
+            },
+            {
               name: 'User 1',
               isBot: false
             }
           ],
           offlineUsers: [
             {
-              name: 'Bot 1',
+              name: 'Bot 9',
               isBot: true
             },
             {
@@ -71,16 +71,6 @@
           ],
         },
         socket: {}
-      }
-    },
-    created(){
-      this.socket = socketIo('http://localhost:3001/')
-    },
-    methods:{
-      sendMessage(){ 
-        this.socke.on('onload', message => {
-          console.log(message);
-        })
       }
     }
   }
