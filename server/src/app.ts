@@ -1,12 +1,18 @@
-  const app = require('express')()
-  const server = require('http').createServer(app)
-  const io = require('socket.io')(server, {
-    cors: {
-      origin: 'http://localhost:8080'
-    }
-  })
+  import express from 'express'
+  import http from 'http'
 
-let messagesArray = ['Hello...', 'Hii, how are you ?']
+  import MessagesController from './controllers/MessagesController'
+
+const app = express()
+const server = http.createServer(app)
+
+const io = require('socket.io')(server, {
+  cors: {
+    origin: 'http://localhost:8080'
+  }
+})
+
+let messagesArray = ['Hello... Welcome']
 
 io.on('connection', (socket: any):void => {
   
@@ -14,9 +20,15 @@ io.on('connection', (socket: any):void => {
   
   socket.on('sendMessage', (message:string):void => {
     messagesArray.push(message)
+    MessagesController.storeMessage(message)
     if(message === 'clear') messagesArray = []
     io.emit('returnMessage', messagesArray)
   })
+})
+
+app.get('/showData', async (req, res) => {
+  const data = MessagesController.getData()
+  res.json(data)
 })
 
 const port:number = 3001
