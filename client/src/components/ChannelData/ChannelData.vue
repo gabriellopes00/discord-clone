@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="messages">
-
+      <!-- Messages Componenets -->
       <ChannelMessage 
         v-for="message  in 1" 
         :key="message" 
@@ -52,7 +52,7 @@
 <script>
   import At from 'vue-material-design-icons/At'
   import { io } from 'socket.io-client'
-
+  // Compoenents
   import ChannelMessage from './ChannelMessage'
   import Mention from './Mention'
 
@@ -69,12 +69,14 @@
         date: ''
       }
     },
+    // Get initial messages from the server
     created(){
       this.socket = io('http://localhost:3001/')
       this.socket.on('getInitialMessages', messages => {
         this.messagesArray = messages
       })
     },
+    // Sending messages to server, and getting the returned messages
     methods: {
       writeMessage(message){
         this.socket.emit('sendMessage', message)
@@ -87,6 +89,7 @@
         })
       }
     },
+    // Get date
     computed:{
       getDate(){
         return new Date().toString()

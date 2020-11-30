@@ -1,16 +1,18 @@
 <template>
+  <!-- layout  -->
   <div id="grid">
     <ServerList />
     <ServerName serverName="Gabriel's Server" />
     <ChannelList />
     <UserInfo userName="User 1" />
-    <ChannelInfo channelName="Gabriel's Channel" :searchUser="searchUser" />
+    <ChannelInfo channelName="Gabriel's Channel" />
     <ChannelData />
     <UserList :Userlist="Userlist" />
   </div>
 </template>
 
 <script>
+    // Componenets
     import ServerList from './components/ServerList/ServerList'
     import ServerName from './components/ServerName/ServerName'
     import ChannelList from './components/ChannelList/ChannelList'
@@ -31,7 +33,7 @@
     },
     data(){
       return{
-        searchUser: '',
+        // User list
         Userlist: {
           onlineUsers: [
             {
@@ -69,8 +71,7 @@
               isBot: true
             },
           ],
-        },
-        socket: {}
+        }
       }
     }
   }

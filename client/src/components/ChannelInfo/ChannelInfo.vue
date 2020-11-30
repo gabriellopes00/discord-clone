@@ -1,4 +1,5 @@
 <template>
+  <!-- Layout -->
   <div class="container">
     <div class="icon">
       <HashTagIcon class="iconElement" :size="24"/>
@@ -6,7 +7,8 @@
     <h1 class="title">{{ channelName }}</h1>
     <div class="separator" />
     <div class="description">Lorem ipsum dolor sit amet...</div>
-    <input type="text" v-model="searchUser" name="searchUser">
+    
+    <input type="text" name="search" />
   </div>
 </template>
 
@@ -15,8 +17,7 @@
 
   export default {
     props: {
-      channelName: String,
-      searchUser: String
+      channelName: String
     },
     components: {
       HashTagIcon
