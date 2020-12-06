@@ -24,6 +24,9 @@ This is an discord interface clone, made with vue.js. But it can connect with th
 
 ## Building ⚙
 You'll need [Node.js](https://nodejs.org) and i recommend that you have installed the [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) on your computer. After, you can run the scripts below...
+
+***Before start the project, go to ``discord-clone/client/src/components/ChannelData/ChannelData.vue`` and enable the ``created()`` function. If you don't do this, the initial messages wont be loaded***
+
 ```
 git clone https://github.com/gabriellopes00/discord-clone.git
 cd discord-clone
