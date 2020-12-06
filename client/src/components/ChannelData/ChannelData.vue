@@ -38,9 +38,9 @@
         type="text" 
         name="message" 
         v-model="message" 
-        @keypress.enter="writeMessage(message)" 
         placeholder="Type a message here, and press enter." 
         id="input-message"
+        @keypress.enter="writeMessage(message)"
       >
       <div class="icon">
         <At :size="24" />
@@ -69,13 +69,13 @@
         date: ''
       }
     },
-    // Get initial messages from the server
-    created(){
-      this.socket = io('http://localhost:3001/')
-      this.socket.on('getInitialMessages', messages => {
-        this.messagesArray = messages
-      })
-    },
+    // Get initial messages from the server (enable the "created()" function to connect with the server)
+    // created(){
+    //   this.socket = io('http://localhost:3001/')
+    //   this.socket.on('getInitialMessages', messages => {
+    //     this.messagesArray = messages
+    //   })
+    // },
     // Sending messages to server, and getting the returned messages
     methods: {
       writeMessage(message){
