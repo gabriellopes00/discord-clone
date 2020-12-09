@@ -12,14 +12,14 @@
 </template>
 
 <script>
-    // Componenets
-    import ServerList from './components/ServerList/ServerList'
-    import ServerName from './components/ServerName/ServerName'
-    import ChannelList from './components/ChannelList/ChannelList'
-    import UserInfo from './components/UserInfo/UserInfo'
-    import ChannelInfo from './components/ChannelInfo/ChannelInfo'
-    import ChannelData from './components/ChannelData/ChannelData'
-    import UserList from './components/UserList/UserList'
+  // Componenets
+  import ServerList from './components/ServerList/ServerList'
+  import ServerName from './components/ServerName/ServerName'
+  import ChannelList from './components/ChannelList/ChannelList'
+  import UserInfo from './components/UserInfo/UserInfo'
+  import ChannelInfo from './components/ChannelInfo/ChannelInfo'
+  import ChannelData from './components/ChannelData/ChannelData'
+  import UserList from './components/UserList/UserList'
 
   export default {
     components: {
