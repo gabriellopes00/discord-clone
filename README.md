@@ -5,12 +5,12 @@
 
 ###### Made with: 
 <p>  
-  <img src="https://devicon.dev/devicon.git/icons/vuejs/vuejs-original.svg" alt="vue.js" width="50" height="50"/>  
-  <img src="https://devicon.dev/devicon.git/icons/sass/sass-original.svg" alt="sass" width="50" height="50"/>  
-  <img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="nodejs" width="50" height="50"/>  
-  <img src="./client/.github/io.png" alt="socket.io  " width="50" height="50"/>
-  <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/>  
-  <img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="50" height="50"/>  
+  <img src="https://cdn.svgporn.com/logos/vue.svg" alt="vue.js" width="50" height="50"/>  
+  <img src="https://cdn.svgporn.com/logos/sass.svg" alt="sass" width="50" height="50"/>  
+  <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" alt="nodejs" width="50" height="50"/>  
+  <img src="https://cdn.svgporn.com/logos/socket.io.svg" alt="socket.io  " width="50" height="50"/>
+  <img src="https://cdn.svgporn.com/logos/javascript.svg" alt="javascript" width="50" height="50"/>  
+  <img src="https://cdn.svgporn.com/logos/typescript-icon.svg" alt="typescript" width="50" height="50"/>  
 </p>
 
 ## About this project 💻
